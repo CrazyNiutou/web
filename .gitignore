@@ -1,3 +1,8 @@
 /NT.Web/obj
 /NT.Web/bin
 /.vs
+/NT.Business/*
+/NT.IBusiness/obj
+/NT.IBusiness/bin
+/NT.Models/obj
+/NT.Models/bin
