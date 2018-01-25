@@ -1,4 +1,0 @@
-D:\work\test\web\NT.Standard\obj\Debug\netcoreapp2.0\NT.Standard.csprojResolveAssemblyReference.cache
-D:\work\test\web\NT.Standard\obj\Debug\netcoreapp2.0\NT.Standard.csproj.CoreCompileInputs.cache
-D:\work\test\web\NT.Standard\obj\Debug\netcoreapp2.0\NT.Standard.AssemblyInfoInputs.cache
-D:\work\test\web\NT.Standard\obj\Debug\netcoreapp2.0\NT.Standard.AssemblyInfo.cs
