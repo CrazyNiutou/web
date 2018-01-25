@@ -5,12 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="1.50.4" />
-    <PackageReference Include="MySql.Data" Version="6.10.5" />
+    <Compile Remove="Db.Extension\**" />
+    <EmbeddedResource Remove="Db.Extension\**" />
+    <None Remove="Db.Extension\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Db.Extension\" />
+    <PackageReference Include="Dapper" Version="1.50.4" />
+    <PackageReference Include="MySql.Data" Version="6.10.5" />
   </ItemGroup>
 
 </Project>
