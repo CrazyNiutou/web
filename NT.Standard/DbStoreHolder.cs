@@ -9,7 +9,6 @@ namespace NT.Standard
 {
     public class DbStoreHolder
     {
-        public static readonly string WebDbConnectionString;
-        public static readonly IDbConnection WebDbConnection = new MySqlConnection();
+        public static readonly string WebDbConnectionString; 
     }
 }

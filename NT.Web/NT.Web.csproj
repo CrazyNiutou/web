@@ -17,4 +17,10 @@
     <Folder Include="wwwroot\static\lib\others\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NT.CommonLib\NT.CommonLib.csproj" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="http://json.schemastore.org/band-manifest" /></VisualStudio></ProjectExtensions>
+
 </Project>

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NT.Web.Models;
+using Microsoft.Extensions.Options;
+using NT.CommonLib;
 
 namespace NT.Web.Controllers
 {
@@ -12,8 +14,9 @@ namespace NT.Web.Controllers
     {
         public IActionResult Index()
         {
-            var url = @"~/html/index.html";
-            return Redirect(url);
+            // IOptions<Test> options;
+            // var test = options.Value;
+            return View();
         }
 
         public IActionResult About()

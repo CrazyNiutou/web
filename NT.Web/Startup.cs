@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NT.CommonLib;
+using NT.Web.Models;
 
 namespace NT.Web
 {
@@ -22,11 +24,15 @@ namespace NT.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+              var ss= Configuration.GetSection("Test");
+            services.Configure<Test>(this.Configuration.GetSection("Test"));
+        
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+          
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

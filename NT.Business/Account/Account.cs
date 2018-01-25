@@ -10,7 +10,8 @@ namespace NT.Business
     {
         public async Task<string> Test()
         {
-
+            await Task.Delay(0);
+            return null;
         }
     }
 }
