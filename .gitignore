@@ -9,3 +9,5 @@
 /NT.Standard/bin
 /NT.Standard/obj
 /NT.Standard/*
+/NT.Common/obj
+/NT.Common/bin

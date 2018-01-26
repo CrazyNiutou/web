@@ -4,18 +4,20 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using NT.Web.Models;
 using Microsoft.Extensions.Options;
-using NT.CommonLib;
+using NT.Web.Models;
 
 namespace NT.Web.Controllers
 {
     public class HomeController : Controller
     {
+        public Test config = null;
+        public HomeController(IOptions<Test> options)
+        {
+            config = options.Value;
+        }
         public IActionResult Index()
         {
-            // IOptions<Test> options;
-            // var test = options.Value;
             return View();
         }
 

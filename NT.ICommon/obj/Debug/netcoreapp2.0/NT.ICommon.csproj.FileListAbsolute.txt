@@ -1,0 +1,9 @@
+D:\work\test\web\NT.ICommon\obj\Debug\netcoreapp2.0\NT.ICommon.csproj.CoreCompileInputs.cache
+D:\work\test\web\NT.ICommon\obj\Debug\netcoreapp2.0\NT.ICommon.AssemblyInfoInputs.cache
+D:\work\test\web\NT.ICommon\obj\Debug\netcoreapp2.0\NT.ICommon.AssemblyInfo.cs
+D:\work\test\web\NT.ICommon\obj\Debug\netcoreapp2.0\NT.ICommon.dll
+D:\work\test\web\NT.ICommon\obj\Debug\netcoreapp2.0\NT.ICommon.pdb
+D:\work\test\web\NT.Web\bin\Debug\netcoreapp2.0\NT.ICommon.deps.json
+D:\work\test\web\NT.Web\bin\Debug\netcoreapp2.0\NT.ICommon.dll
+D:\work\test\web\NT.Web\bin\Debug\netcoreapp2.0\NT.ICommon.pdb
+D:\work\test\web\NT.ICommon\obj\Debug\netcoreapp2.0\NT.ICommon.csprojResolveAssemblyReference.cache
