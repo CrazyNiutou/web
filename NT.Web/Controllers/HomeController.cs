@@ -5,16 +5,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using NT.Common;
 using NT.Web.Models;
 
 namespace NT.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public Test config = null;
-        public HomeController(IOptions<Test> options)
+        public ConfigOptions config = null;
+        public HomeController(IOptions<ConfigOptions> options)
         {
             config = options.Value;
+            var test=config.ConnectString;
         }
         public IActionResult Index()
         {

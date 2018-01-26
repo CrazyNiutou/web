@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NT.Common\NT.Common.csproj" />
     <ProjectReference Include="..\NT.IBusiness\NT.IBusiness.csproj" />
-    <ProjectReference Include="..\NT.ICommon\NT.ICommon.csproj" />
     <ProjectReference Include="..\NT.Models\NT.Models.csproj" />
   </ItemGroup>
 
