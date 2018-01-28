@@ -1,17 +1,19 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using NT.Common;
+using NT.ICommon;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NT.Web.Extensions
+namespace NT.Web
 {
     public static class Extension
     {
-        public static IServiceCollection AddConfigService(this IServiceCollection service)
+        public static void AddDbStoreHolder(this IServiceCollection service)
         {
-            return null;
+            service.AddSingleton<IDbStoreHolder, DbStoreHolder>();
         }
+
     }
 }

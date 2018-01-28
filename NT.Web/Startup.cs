@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using NT.Common;
+using NT.ICommon;
 using NT.Web.Models;
 
 namespace NT.Web
@@ -23,9 +23,10 @@ namespace NT.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
             services.AddOptions();
             services.Configure<ConfigOptions>(Configuration.GetSection("ConfigOptions"));
+            services.AddDbStoreHolder();
+            services.AddMvc(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

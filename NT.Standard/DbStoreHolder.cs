@@ -9,6 +9,7 @@ namespace NT.Standard
 {
     public class DbStoreHolder
     {
+        public DbStoreHolder (IOptions)
         public static readonly string WebDbConnectionString; 
     }
 }

@@ -4,19 +4,22 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using NT.Common;
+using NT.ICommon;
 using NT.Web.Models;
 
 namespace NT.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public ConfigOptions config = null;
+        public ConfigOptions config;
         public HomeController(IOptions<ConfigOptions> options)
         {
-            config = options.Value;
-            var test=config.ConnectString;
+            var service = new ServiceCollection();
+            var provider = service.BuildServiceProvider();
+            var test = provider.GetService<DbStoreHolder>();
         }
         public IActionResult Index()
         {

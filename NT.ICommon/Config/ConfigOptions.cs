@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NT.ICommon
 {
-    public class IConfigOptions
+    public class ConfigOptions
     {
         public string ConnectString { get; set; }
     }
