@@ -16,7 +16,6 @@ namespace NT.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public ConfigOptions config;
         private MySqlOperator m_MySqlOperator;
         public HomeController(IServiceProvider provider)
         {
