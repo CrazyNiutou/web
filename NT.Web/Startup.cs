@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NT.ICommon;
+using NT.Models;
 using NT.Web.Models;
 
 namespace NT.Web
@@ -26,7 +27,8 @@ namespace NT.Web
             services.AddOptions();
             services.Configure<ConfigOptions>(Configuration.GetSection("ConfigOptions"));
             services.AddDbStoreHolder();
-            services.AddMvc(); 
+            services.AddMvc();
+            services.AddScoped<MySqlOperator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

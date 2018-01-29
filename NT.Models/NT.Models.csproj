@@ -12,12 +12,14 @@
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="1.50.4" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.0.0" />
     <PackageReference Include="MySql.Data" Version="6.10.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Db.Operator\" />
+    <ProjectReference Include="..\NT.Common\NT.Common.csproj" />
+    <ProjectReference Include="..\NT.ICommon\NT.ICommon.csproj" />
   </ItemGroup>
 
 </Project>

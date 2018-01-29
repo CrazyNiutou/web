@@ -8,21 +8,26 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using NT.Common;
 using NT.ICommon;
+using NT.Models;
 using NT.Web.Models;
+using Dapper;
 
 namespace NT.Web.Controllers
 {
     public class HomeController : Controller
     {
         public ConfigOptions config;
-        public HomeController(IOptions<ConfigOptions> options)
+        private MySqlOperator m_MySqlOperator;
+        public HomeController(IServiceProvider provider)
         {
-            var service = new ServiceCollection();
-            var provider = service.BuildServiceProvider();
-            var test = provider.GetService<DbStoreHolder>();
+            m_MySqlOperator = provider.GetService<MySqlOperator>();
         }
         public IActionResult Index()
         {
+            using (var connect = m_MySqlOperator.GetDbConnection())
+            {
+                var test = connect.Query("select * from t_user");
+            }
             return View();
         }
 

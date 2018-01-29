@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using NT.Common;
 using NT.ICommon;
 using System;
@@ -10,10 +11,9 @@ namespace NT.Web
 {
     public static class Extension
     {
-        public static void AddDbStoreHolder(this IServiceCollection service)
+        public static IServiceCollection AddDbStoreHolder(this IServiceCollection service)
         {
-            service.AddSingleton<IDbStoreHolder, DbStoreHolder>();
+            return service.AddSingleton<IDbStoreHolder, DbStoreHolder>();
         }
-
     }
 }

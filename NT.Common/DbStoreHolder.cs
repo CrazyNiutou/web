@@ -11,10 +11,13 @@ namespace NT.Common
 {
     public class DbStoreHolder : IDbStoreHolder
     {
-        public string WebDbConnectionString;
+        public string MySqlConnectString { get; set; }
+        private readonly IOptions<ConfigOptions> _Options;
         public DbStoreHolder(IOptions<ConfigOptions> options)
         {
-
+            _Options = options;
+            MySqlConnectString = _Options.Value.ConnectString;
         }
+
     }
 }
