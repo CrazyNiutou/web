@@ -11,3 +11,5 @@
 /NT.Standard/*
 /NT.Common/obj
 /NT.Common/bin
+/NT.ICommon/obj
+/NT.ICommon/bin

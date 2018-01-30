@@ -1,35 +1,199 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Microsoft YaHei';
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+body {
+    margin-bottom: 60px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+ul {
+    list-style: none;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+a {
+    text-decoration: none;
+    text-decoration-style: none;
+    color: #000000;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
-}
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
+    a:hover {
+        text-decoration: none;
+        color: #000000;
     }
+
+#header {
+    position: fixed;
+    height: 69px;
+    background: #fff;
+    border-bottom: 1px solid #EAEAEA;
+    width: 100%;
+    z-index: 10000;
 }
+
+    #header .header-c {
+        width: 1190px;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+        #header .header-c a.logo {
+            width: 164px;
+            height: 60px;
+            display: block;
+            margin-top: 5px;
+            float: left;
+        }
+
+        #header .header-c .nav {
+            float: left;
+        }
+
+            #header .header-c .nav ul {
+                margin-left: 40px;
+            }
+
+                #header .header-c .nav ul li {
+                    position: relative;
+                    padding: 0px 15px;
+                    float: left;
+                    line-height: 67px;
+                    height: 67px;
+                    margin: 0 10px;
+                }
+
+                    #header .header-c .nav ul li span {
+                        background: #ff6600;
+                        display: block;
+                        width: 0px;
+                        position: absolute;
+                        left: 50%;
+                        bottom: -2px;
+                    }
+
+                    #header .header-c .nav ul li a {
+                        font-size: 16px;
+                        color: #333;
+                    }
+
+        #header .header-c #nav-btn {
+            float: right;
+        }
+
+            #header .header-c #nav-btn #login-ul li {
+                position: relative;
+                padding: 0 15px;
+                float: right;
+                line-height: 67px;
+                height: 67px;
+                margin: 0 10px;
+            }
+
+                #header .header-c #nav-btn #login-ul li a {
+                    font-size: 16px;
+                    color: #ff6600;
+                }
+
+.navactive {
+    border-bottom: 2px solid #ff6600;
+}
+
+.placeholder {
+    width: 100%;
+    height: 70px;
+}
+
+.bus_box {
+    display: block;
+}
+
+    .bus_box div {
+        display: block;
+        height: 100%;
+    }
+
+    .bus_box .show_box_header {
+        width: 590px;
+        padding: 15px 0 0 10px;
+        float: right;
+    }
+
+        .bus_box .show_box_header ul {
+            display: block;
+            list-style-type: disc;
+            height: 28px;
+            line-height: 28px;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+            .bus_box .show_box_header ul li {
+                float: left;
+            }
+
+
+#container {
+    padding-top: 100px;
+}
+
+#tab_1 {
+    border-bottom: 2px solid #f0f0f0;
+    line-height: 30px;
+    height: 30px;
+    font-weight: normal;
+    padding: 0px 10px 0 0 !IMPORTANT;
+}
+
+    #tab_1 h2 {
+        font-size: 18px;
+        height: 30px;
+        line-height: 30px;
+        display: inline-block;
+        background: none;
+        font-weight: normal;
+        margin: 0;
+    }
+
+#tab_1_content {
+    padding-top: 10px !important;
+}
+
+    #tab_1_content .tab_1_img {
+        float: left;
+    }
+
+    #tab_1_content .tabl_1_title {
+        float: left;
+    }
+
+        #tab_1_content .tabl_1_title ul {
+            padding-left: 10px;
+        }
+
+            #tab_1_content .tabl_1_title ul li {
+                line-height: 30px;
+            }
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+    #footer #p1 {
+        margin-top: 10px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    #footer #p2 {
+        margin-top: 10px;
+        font-size: 12px;
+        text-align: center;
+    }

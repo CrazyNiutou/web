@@ -11,6 +11,7 @@ using NT.ICommon;
 using NT.Models;
 using NT.Web.Models;
 using Dapper;
+using Microsoft.AspNetCore.Authorization;
 
 namespace NT.Web.Controllers
 {
@@ -21,12 +22,10 @@ namespace NT.Web.Controllers
         {
             m_MySqlOperator = provider.GetService<MySqlOperator>();
         }
+
+        
         public IActionResult Index()
-        {
-            using (var connect = m_MySqlOperator.GetDbConnection())
-            {
-                var test = connect.Query("select * from t_user");
-            }
+        { 
             return View();
         }
 
