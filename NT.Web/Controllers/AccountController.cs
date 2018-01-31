@@ -19,5 +19,11 @@ namespace NT.Web.Controllers
         {
             return "测试";
         }
+
+        [Route("account/register"), HttpPost]
+        public IActionResult Register()
+        {
+            return View();
+        }
     }
 }
