@@ -34,8 +34,8 @@ namespace NT.Web
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, x =>
             {
                 x.Cookie.Path = "/"; 
-                x.LoginPath = new PathString("/html/account/login");
-                x.AccessDeniedPath = new PathString("/Home/Contact"); 
+                x.LoginPath = new PathString("/account/index");
+                x.AccessDeniedPath = new PathString("/home/error"); 
             });
         }
 
@@ -48,7 +48,7 @@ namespace NT.Web
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/home/error");
             }
 
             app.UseStaticFiles();

@@ -23,7 +23,6 @@ namespace NT.Web.Controllers
             m_MySqlOperator = provider.GetService<MySqlOperator>();
         }
 
-        
         public IActionResult Index()
         { 
             return View();
@@ -39,7 +38,6 @@ namespace NT.Web.Controllers
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 
