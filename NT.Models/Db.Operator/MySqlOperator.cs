@@ -12,7 +12,7 @@ namespace NT.Models
     {
         private IDbStoreHolder m_dbStoreHolder;
 
-        private IDbConnection DbConnect;
+        private MySqlConnection DbConnect;
         public MySqlOperator(IDbStoreHolder dbStoreHolder)
         {
             m_dbStoreHolder = dbStoreHolder;

@@ -17,7 +17,7 @@ namespace NT.Models
     /// </summary>
 
     [Serializable]
-    public partial class Users
+    public partial class UsersDbEntity
     {
         #region Model
         private string _SerialNumber;

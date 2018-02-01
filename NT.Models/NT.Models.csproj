@@ -22,4 +22,8 @@
     <ProjectReference Include="..\NT.ICommon\NT.ICommon.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Db.Extensions\" />
+  </ItemGroup>
+
 </Project>

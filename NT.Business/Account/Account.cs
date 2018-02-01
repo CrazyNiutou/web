@@ -16,10 +16,15 @@ namespace NT.Business
         }
 
         public async Task<string> GetUsersInfo(string userName, string pwd)
-        { 
-            using (IDbConnection connect = Operator.GetMySqlDbConnection())
+        {
+            using (var conn = Operator.GetMySqlDbConnection())
             {
-
+                var sql = string.Format(@"select A.*,B.RolesGroupName,C.RolesId,D.RolesName from users A
+                    inner join rolesgroup B on B.RolesGroupId=A.RolesGroupId
+                    inner join rolesgroupdtl C on C.RolesGroupId=B.RolesGroupId
+                    inner join roles D on D.RolesId=C.RolesId
+                    where A.UserName='{0}' AND A.`PassWord`='{1}' ", userName, pwd);
+                var userInfo = conn.Query<UsersDbEntity>(sql);
             }
             await Task.Delay(0);
             return null;

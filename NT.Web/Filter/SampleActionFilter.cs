@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,16 +8,11 @@ using System.Threading.Tasks;
 
 namespace NT.Web
 {
-    public class SampleActionFilter : IActionFilter
+    public class SampleActionFilter : IAuthorizationFilter
     {
-        public void OnActionExecuted(ActionExecutedContext context)
+        public void OnAuthorization(AuthorizationFilterContext context)
         {
-            throw new NotImplementedException();
-        }
 
-        public void OnActionExecuting(ActionExecutingContext context)
-        {
-            throw new NotImplementedException();
         }
     }
 }
