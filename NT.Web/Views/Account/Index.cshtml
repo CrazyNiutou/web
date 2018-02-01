@@ -7,39 +7,17 @@
     <link href="~/css/account/index/index.css" rel="stylesheet" />
 </environment>
 <div class="container">
-    <form class="form-signin" action="" method="post">
-        <h2 class="form-signin-heading">请登录</h2>
-        <label for="inputEmail" class="sr-only">用户名/邮箱</label>
-        <br>
-        <input type="email" name="email" id="txtUserName" class="form-control" placeholder="用户名/邮箱" required autofocus>
-        <br>
-        <label for="inputPassword" class="sr-only">密码</label>
-        <input type="password" name="password" id="txtPwd" class="form-control" placeholder="密码" required>
-        <br>
-        <input type="submit" class="btn btn-lg btn-primary btn-block" id="btnLogin" value="登录">
-    </form>
+    <h2 class="form-signin-heading">请登录</h2>
+    <label for="inputEmail" class="sr-only">用户名/邮箱</label>
+    <br>
+    <input type="email" name="email" id="txtUserName" class="form-control" placeholder="用户名/邮箱" required autofocus>
+    <br>
+    <label for="inputPassword" class="sr-only">密码</label>
+    <input type="password" name="password" id="txtPwd" class="form-control" placeholder="密码" required>
+    <br>
+    <input type="submit" class="btn btn-lg btn-primary btn-block" id="btnLogin" value="登录">
 </div>
 <environment>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/account/index/index.js"></script>
-</environment>
-<script>
-    $(function () {
-        $("#btnLogin").click(function () {
-            $.ajax({
-                type: "POST",
-                url: "/account/login",
-                data: "{'userName':'text','pwd':'text1'}",
-                contentType: "application/json;charset=utf-8",
-                dataType: "json",
-                success: function (data) {
-                    alert(data.data);
-                },
-                error: function (err) {
-                    alert(err);
-                }
-            });
-        })
-    })
-
-</script>
+</environment> 

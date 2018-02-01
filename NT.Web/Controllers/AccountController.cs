@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace NT.Web.Controllers
 {
@@ -14,16 +15,18 @@ namespace NT.Web.Controllers
             return View();
         }
 
-        [Route("account/login"), HttpPost]
-        public string Login(string userName, string pwd)
-        {
-            return "测试";
-        }
-
-        [Route("account/register"), HttpPost]
         public IActionResult Register()
         {
             return View();
         }
+
+        [Route("account/login")]
+        public JsonResult Login(string userName, string pwd)
+        {
+            var test = "123";
+            var test1 = JsonConvert.SerializeObject(test);
+            return new JsonResult(test1);
+        }
+
     }
 }

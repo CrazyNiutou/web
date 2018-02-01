@@ -7,6 +7,6 @@ namespace NT.IBusiness
 {
     public interface IAccount
     {
-        Task<string> Test();
+        Task<string> GetUsersInfo(string userName, string pwd);
     }
 }

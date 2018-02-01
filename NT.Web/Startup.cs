@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NT.Business;
+using NT.IBusiness;
 using NT.ICommon;
 using NT.Models;
 using NT.Web.Models;
@@ -28,15 +31,27 @@ namespace NT.Web
         {
             services.AddOptions();
             services.Configure<ConfigOptions>(Configuration.GetSection("ConfigOptions"));
-            services.AddDbStoreHolder();
             services.AddMvc();
-            services.AddScoped<MySqlOperator>();
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, x =>
+            //添加授权
+            services.AddAuthentication(options =>
             {
-                x.Cookie.Path = "/"; 
-                x.LoginPath = new PathString("/account/index");
-                x.AccessDeniedPath = new PathString("/home/error"); 
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            }).AddCookie(options =>
+            {
+                options.LoginPath = new PathString("/account/index/");
+                options.AccessDeniedPath = new PathString("/account/index/");
             });
+
+            #region 自定义注入
+
+            services.AddScoped<MySqlOperator>();
+            services.AddDbStoreHolder();
+            services.AddScoped<IAccount, Account>();
+
+            #endregion
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,18 +64,16 @@ namespace NT.Web
             else
             {
                 app.UseExceptionHandler("/home/error");
-            }
-
-            app.UseStaticFiles();
-
+            } 
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-
+            //调用身份验证中间件
             app.UseAuthentication();
+            app.UseStaticFiles();
         }
     }
 }

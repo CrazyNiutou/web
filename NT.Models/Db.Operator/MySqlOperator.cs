@@ -18,7 +18,7 @@ namespace NT.Models
             m_dbStoreHolder = dbStoreHolder;
             DbConnect = new MySqlConnection(m_dbStoreHolder.MySqlConnectString);
         }
-        public IDbConnection GetDbConnection()
+        public MySqlConnection GetMySqlDbConnection()
         {
             return DbConnect;
         }
