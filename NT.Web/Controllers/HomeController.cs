@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using NT.Models;
 using NT.Web.Models;
@@ -15,6 +16,7 @@ namespace NT.Web.Controllers
             m_MySqlOperator = provider.GetService<MySqlOperator>();
         }
 
+        [Authorize]
         public IActionResult Index()
         { 
             return View();

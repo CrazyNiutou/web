@@ -2,7 +2,7 @@
     $("#btnLogin").click(function () {
         var password = $("#txtPwd").val();
         var username = $("#txtUserName").val();
-        var url = "login?username=" + password + "&pwd=" + username;
+        var url = "login?username=" + username + "&pwd=" + password + "&home/index";
         $.ajax({
             type: "GET",
             url: url,
@@ -11,9 +11,10 @@
             dataType: "json",
             success: function (data) {
                 console.log(data);
+                window.location.href = data;
             },
             error: function (err) {
-                console.log(err);
+                console.log(err); 
             }
         });
     })

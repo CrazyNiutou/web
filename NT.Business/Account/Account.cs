@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using System.Data;
 using Dapper;
+using System.Collections.Generic;
 
 namespace NT.Business
 {
@@ -15,19 +16,19 @@ namespace NT.Business
             this.Operator = provider.GetService<MySqlOperator>();
         }
 
-        public async Task<string> GetUsersInfo(string userName, string pwd)
+        public async Task<List<UserInfoSerialize>> GetUsersInfo(string userName, string pwd)
         {
+            var sql = string.Format(@"select A.*,C.RolesGroupName,C.RolesGroupId from users A
+                inner join rolesgroupdtl B on B.UserId=A.UserId
+                INNER JOIN rolesgroup C on C.RolesGroupId=B.RolesGroupId
+                    where A.UserNumber='{0}' AND A.`PassWord`='{1}' ", userName, pwd);
+            List<UserInfoSerialize> returnEntity = null;
             using (var conn = Operator.GetMySqlDbConnection())
             {
-                var sql = string.Format(@"select A.*,B.RolesGroupName,C.RolesId,D.RolesName from users A
-                    inner join rolesgroup B on B.RolesGroupId=A.RolesGroupId
-                    inner join rolesgroupdtl C on C.RolesGroupId=B.RolesGroupId
-                    inner join roles D on D.RolesId=C.RolesId
-                    where A.UserName='{0}' AND A.`PassWord`='{1}' ", userName, pwd);
-                var userInfo = conn.Query<UsersDbEntity>(sql);
+                returnEntity = conn.Query<UserInfoSerialize>(sql).AsList<UserInfoSerialize>();
             }
             await Task.Delay(0);
-            return null;
+            return returnEntity;
         }
     }
 }

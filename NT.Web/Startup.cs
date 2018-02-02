@@ -35,21 +35,22 @@ namespace NT.Web
             //添加授权
             services.AddAuthentication(options =>
             {
-                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            }).AddCookie(options =>
-            {
-                options.LoginPath = new PathString("/account/index/");
-                options.AccessDeniedPath = new PathString("/account/index/");
-            });
+                options.DefaultChallengeScheme = "MyCookieMiddleware";
+                options.DefaultSignInScheme = "MyCookieMiddleware";
+                options.DefaultAuthenticateScheme = "MyCookieMiddleware";
+            }).AddCookie("MyCookieMiddleware", options =>
+             {
+                 options.LoginPath = new PathString("/account/index/");
+                 options.AccessDeniedPath = new PathString("/account/index/");
+                 //options.LogoutPath = new PathString("/Account/index");
+             });
 
             #region 自定义注入
 
             services.AddScoped<MySqlOperator>();
             services.AddDbStoreHolder();
             services.AddScoped<IAccount, Account>();
-
+            services.AddScoped<OutputParam>();
             #endregion
 
         }
@@ -64,7 +65,7 @@ namespace NT.Web
             else
             {
                 app.UseExceptionHandler("/home/error");
-            } 
+            }
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
