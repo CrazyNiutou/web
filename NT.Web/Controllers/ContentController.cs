@@ -15,5 +15,9 @@ namespace NT.Web.Controllers
         {
             return View();
         }
+        public IActionResult ArticlesList(int pageIndex, int pageCount)
+        {
+            return View();
+        }
     }
 }
