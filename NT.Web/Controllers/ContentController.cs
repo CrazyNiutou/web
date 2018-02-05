@@ -15,9 +15,12 @@ namespace NT.Web.Controllers
         {
             return View();
         }
-        public IActionResult ArticlesList(int pageIndex, int pageCount)
+        public JsonResult ArticlesList(int pageIndex, int pageCount)
         {
-            return View();
+            return new JsonResult(@"[
+                    { message: 'Foo' },
+                    { message: 'Bar' }
+                ]");
         }
     }
 }

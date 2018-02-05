@@ -24,11 +24,29 @@
             items: [],
             articleList: '',
         },
+        created: function () {
+            this.getList()
+        },
         methods: {
-            this.items = [
-                { message: 'Foo' },
-                { message: 'Bar' }
-            ]
+            getList: function () {
+                var url = "articleslist?pageindex=" + 1 + "&pagecount=" + 2;
+                let result;
+                var that = this;
+                $.ajax({
+                    type: "GET",
+                    url: url,
+                    aync: false, 
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data); 
+                        that.items = data;
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                }); 
+            }
         }
     })
 </script>
