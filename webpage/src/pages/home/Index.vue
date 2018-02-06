@@ -6,13 +6,13 @@ export default {
   name: "HomeIndex"
 };
 
-axios.get('/user?ID=1234')
-.then(function(respone){
-  console.log(response);
-})
-.catch(function(error){
-  console.log(error);
-});
+// axios.get('http://localhost:63155/Account/Login?userName=123&pwd=22')
+// .then(function(respone){
+//   console.log(response);
+// })
+// .catch(function(error){
+//   console.log(error);
+// });
 
 
 </script>
