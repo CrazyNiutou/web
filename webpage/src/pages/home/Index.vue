@@ -1,10 +1,12 @@
 <template>
+<div>
+  <div class="line"></div>  
   <el-row :gutter="20">
     <el-col :span="6">
       <div class="grid-content bg-purple">
         <div class="wrap">
           <span class="wrap_img">
-            <img src="static/img/common_65_icon.jpg" />
+            <img src="static/img/logo_new.png" />
           </span>
           <div class="tabl_1_title">
             <ul>
@@ -21,7 +23,7 @@
       <div class="grid-content bg-purple">
            <div class="wrap">
           <span class="wrap_img">
-            <img src="static/img/common_65_icon.jpg" />
+            <img src="static/img/logo_new.png" />
           </span>
           <div class="tabl_1_title">
             <ul>
@@ -38,7 +40,7 @@
       <div class="grid-content bg-purple">
            <div class="wrap">
           <span class="wrap_img">
-            <img src="static/img/common_65_icon.jpg" />
+            <img src="static/img/logo_new.png" />
           </span>
           <div class="tabl_1_title">
             <ul>
@@ -57,10 +59,14 @@
       </div>
     </el-col>
   </el-row>
-
+</div>
 </template>
 
 <style>
+.line{
+  border-bottom: 1px;
+  border-bottom-color: black;
+}
 .wrap { 
     display: flex;
     justify-content: flex-start; 
