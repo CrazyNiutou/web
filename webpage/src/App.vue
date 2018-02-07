@@ -7,8 +7,8 @@
           <span class="left logo">
             <img src="../static/img/logo.png" />
           </span>
-          <el-menu-item index="1">首页</el-menu-item>
-          <el-menu-item index="2">社区</el-menu-item>
+          <el-menu-item index="1"><router-link to="/">首页</router-link></el-menu-item>
+          <el-menu-item index="2"><router-link to="/content/articles">社区</router-link></el-menu-item>
           <!-- <el-submenu index="2">
             <template slot="title">我的工作台</template>
             <el-menu-item index="2-1">选项1</el-menu-item>
@@ -16,7 +16,7 @@
             <el-menu-item index="2-3">选项3</el-menu-item>
           </el-submenu> -->
           <el-menu-item index="3">
-            <a href="#" target="_blank">会员</a>
+            <a href="#" target="_blank"><router-link to="/member/Members">会员</router-link></a>
           </el-menu-item>
         </el-menu>
       </el-header>
