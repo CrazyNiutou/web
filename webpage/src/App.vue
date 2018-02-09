@@ -16,7 +16,7 @@
             <el-menu-item index="2-3">选项3</el-menu-item>
           </el-submenu> -->
           <el-menu-item index="3">
-            <a href="#" target="_blank"><router-link to="/member/Members">会员</router-link></a>
+            <a href="#" ><router-link  to="/member/Members">会员</router-link></a>
           </el-menu-item>
         </el-menu>
       </el-header>

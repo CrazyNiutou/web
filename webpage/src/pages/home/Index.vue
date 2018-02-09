@@ -11,7 +11,7 @@
           <div class="tabl_1_title">
             <ul>
               <li style="font-size:16px;font-weight:600">
-                <a href="#">Red Net</a>
+                <a href="#"> <router-link to="/content/Articles">Red Net</router-link></a>
               </li>
               <li>帖子:{{500}}</li>
             </ul>
