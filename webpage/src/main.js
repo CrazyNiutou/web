@@ -148,11 +148,13 @@ Vue.prototype.$notify = Notification
 Vue.prototype.$message = Message
 
 import Element from 'element-ui'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
 Vue.use(Element)
+Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false
- 
- 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

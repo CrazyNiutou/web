@@ -46,6 +46,14 @@ export default {
 };
 
 import "element-ui/lib/theme-chalk/index.css";
+import Vue from "vue";
+
+var temp = new Vue({
+  el: "#app",
+  data: {
+    activeIndex: 1
+  }
+});
 </script>
 
 <style>
