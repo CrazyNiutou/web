@@ -153,7 +153,7 @@ import VueAxios from 'vue-axios'
 
 Vue.use(Element)
 Vue.use(VueAxios, axios)
-
+// Vue.prototype.$ajax=Vue
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({

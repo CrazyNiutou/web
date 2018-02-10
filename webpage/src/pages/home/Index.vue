@@ -6,7 +6,7 @@
       <div class="grid-content bg-purple">
         <div class="wrap">
           <span class="wrap_img">
-            <img src="static/img/logo_new.png" />
+            <img src="static/img/common_65_icon.jpg" />
           </span>
           <div class="tabl_1_title">
             <ul>
@@ -23,7 +23,7 @@
       <div class="grid-content bg-purple">
            <div class="wrap">
           <span class="wrap_img">
-            <img src="static/img/logo_new.png" />
+            <img src="static/img/common_65_icon.jpg" />
           </span>
           <div class="tabl_1_title">
             <ul>
@@ -40,7 +40,7 @@
       <div class="grid-content bg-purple">
            <div class="wrap">
           <span class="wrap_img">
-            <img src="static/img/logo_new.png" />
+            <img src="static/img/common_65_icon.jpg" />
           </span>
           <div class="tabl_1_title">
             <ul>
@@ -55,12 +55,28 @@
     </el-col>
     <el-col :span="6">
       <div class="grid-content bg-purple">
-        
+        <div id="test111">
+          <span v-bind:title="message">
+            鼠标悬停几秒钟查看此处动态绑定的提示信息！
+          </span>
+        </div>
       </div>
     </el-col>
   </el-row>
 </div>
 </template>
+
+
+<script>
+export default {
+  name: "HomeIndex",
+  name:'#test1111' ,
+  data:{
+    'message':'123'
+  }
+};
+ 
+</script>
 
 <style>
 .line{
@@ -77,16 +93,3 @@
 </style>
 
 
-<script>
-export default {
-  name: "HomeIndex"
-};
-
-// axios.get('http://localhost:63155/Account/Login?userName=123&pwd=22')
-// .then(function(respone){
-//   console.log(response);
-// })
-// .catch(function(error){
-//   console.log(error);
-// });
-</script>
