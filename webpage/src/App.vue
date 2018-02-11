@@ -3,7 +3,8 @@
     <el-container>
       <el-header>
         <div class="line"></div>
-        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
+           <!-- @select="handleSelect" -->
           <span class="left logo">
             <img src="../static/img/logo.png" />
           </span>
@@ -42,18 +43,16 @@
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  data(){
+    return {
+      activeIndex: '1'
+    }
+  }
 };
 
 import "element-ui/lib/theme-chalk/index.css";
-import Vue from "vue";
-
-var temp = new Vue({
-  el: "#app",
-  data: {
-    activeIndex: 1
-  }
-});
+ 
 </script>
 
 <style>

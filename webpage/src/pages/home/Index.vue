@@ -70,9 +70,10 @@
 <script>
 export default {
   name: "HomeIndex",
-  name:'#test1111' ,
-  data:{
-    'message':'123'
+  data(){
+    return{
+      message:'123'
+    }
   }
 };
  

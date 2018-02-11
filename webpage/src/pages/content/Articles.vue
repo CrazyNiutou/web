@@ -1,16 +1,20 @@
 <template> 
 <div id="test"> 
   <ul>
-    <li  v-for="(item,index) in items" :key="index">
-      {{item}}
-    </li>
+    <!-- <li  v-for="(item,index) in items" :key="index"> -->
+      {{items}}
+    <!-- </li> -->
   </ul>
 </div>
 </template>
 <script>
-
 export default {
-  name: "ContentArticles", 
+  name: "ContentArticles",
+  data() {
+    return {
+      items:[]
+    };
+  }
   // el: "#test",
   // data: {
   // return  items: []
@@ -26,4 +30,5 @@ export default {
   //     });
   // }
 };
+
 </script>
