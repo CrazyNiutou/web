@@ -8,7 +8,7 @@
           <span class="left logo">
             <img src="../static/img/logo.png" />
           </span>
-          <el-menu-item index="1"><router-link to="/">首页</router-link></el-menu-item>
+          <el-menu-item index="1" ><router-link to="/">首页</router-link></el-menu-item>
           <el-menu-item index="2"><router-link to="/content/articles">社区</router-link></el-menu-item>
           <!-- <el-submenu index="2">
             <template slot="title">我的工作台</template>
@@ -44,15 +44,14 @@
 <script>
 export default {
   name: "App",
-  data(){
+  data() {
     return {
-      activeIndex: '1'
-    }
+      activeIndex: "1"
+    };
   }
 };
 
 import "element-ui/lib/theme-chalk/index.css";
- 
 </script>
 
 <style>
