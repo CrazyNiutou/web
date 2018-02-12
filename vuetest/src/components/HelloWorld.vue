@@ -13,7 +13,7 @@
       <p>Original message: "{{ message }}"</p>
       <p>Computed reversed message: "{{ reversedMessage }}"</p>
     </div>
-
+    <input v-model="question">
   </div>
 </template>
 
@@ -37,6 +37,18 @@
       reversedMessage: function () {
         return this.message.split('').reverse().join('')
       }
+    },
+    watch: {
+      question: function (newQuestion,oldQuestion) {
+        this.getMsg()
+      }
+    },
+    methods:{
+      getMsg:_.debouce(
+        function(){
+          
+        }
+      )
     },
     created: function () {
       console.log(data.msg + this.msg)
