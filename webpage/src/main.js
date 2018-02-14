@@ -155,6 +155,7 @@ Vue.use(Element)
 Vue.use(VueAxios, axios)
 // Vue.prototype.$ajax=Vue
 Vue.config.productionTip = false
+Vue.prototype.$ajax = axios
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

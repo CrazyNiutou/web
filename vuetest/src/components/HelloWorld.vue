@@ -17,7 +17,8 @@
   </div>
 </template>
 
-<script>
+<script> 
+
   var data = {
     msg: '111'
   }
@@ -30,7 +31,8 @@
         rawHtml: '<span style="color:red">rawHtml</span>',
         dynamicId: 'test',
         seen: true,
-        message: 'Hello'
+        message: 'Hello',
+        question:''
       }
     },
     computed: {
@@ -38,22 +40,27 @@
         return this.message.split('').reverse().join('')
       }
     },
-    watch: {
-      question: function (newQuestion,oldQuestion) {
+    watch: { 
+      question: function (newQuestion, oldQuestion) {
         this.getMsg()
       }
     },
-    methods:{
-      getMsg:_.debouce(
-        function(){
-          
-        }
-      )
+    methods: {
+      getMsg: function () {
+        var vm=this 
+        this.Axios. get('https://yesno.wtf/api')
+          .then(function (response) {
+            vm.answer = _.capitalize(response.data.answer)
+          })
+          .catch(function (error) {
+            vm.answer = 'Error! Could not reach the API. ' + error
+          })
+      }
     },
     created: function () {
       console.log(data.msg + this.msg)
     }
-  }
+  }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 
 </script>
 

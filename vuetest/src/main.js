@@ -8,6 +8,8 @@ import Axios from 'axios'
 Vue.config.productionTip = false
 
 Vue.use(Axios)
+Vue.prototype.Axios=Axios
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
