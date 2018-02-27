@@ -4,15 +4,32 @@
       <el-header>
         <div class="line"></div>
         <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
-           <!-- @select="handleSelect" -->
+          <!-- @select="handleSelect" -->
           <span class="left logo">
             <img src="../static/img/logo.png" />
           </span>
-          <el-menu-item index="1" ><router-link to="/">首页</router-link></el-menu-item>
-          <el-menu-item index="2"><router-link to="/content/articles">社区</router-link></el-menu-item>
-          <el-menu-item index="3">
-            <a href="#" ><router-link  to="/member/Members">会员</router-link></a>
+          <el-menu-item index="1">
+            <router-link to="/">首页</router-link>
           </el-menu-item>
+          <!-- <el-menu-item index="2">
+            <router-link to="/content/articles">社区</router-link>
+          </el-menu-item> -->
+          <el-menu-item index="3">
+            <a href="#">
+              <router-link to="/member/Members">会员</router-link>
+            </a>
+          </el-menu-item>
+          <div class="testRegister">
+            <el-menu-item index="11">
+              <router-link to="/content/aaa">注册</router-link>
+            </el-menu-item>
+          </div>
+          <div class="testLogin">
+            <el-menu-item index="22">
+              <router-link to="/content/bbb">登录</router-link>
+            </el-menu-item>
+          </div>
+
         </el-menu>
       </el-header>
       <el-main>
@@ -36,54 +53,65 @@
 </template>
 
 <script>
-export default {
-  name: "App",
-  data() {
-    return {
-      activeIndex: "1"
-    };
-  }
-};
+  export default {
+    name: "App",
+    data() {
+      return {
+        activeIndex: "1"
+      };
+    }
+  };
 
-import "element-ui/lib/theme-chalk/index.css";
+  import "element-ui/lib/theme-chalk/index.css";
 
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-ul {
-  list-style: none;
-}
-.logo {
-  float: left;
-  padding-left: 10px;
-  padding-right: 50px;
-}
+  #app {
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
 
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #f5f5f5;
-}
+  ul {
+    list-style: none;
+  }
 
-#footer #p1 {
-  margin-top: 10px;
-  font-size: 12px;
-  text-align: center;
-}
+  .logo {
+    float: left;
+    padding-left: 10px;
+    padding-right: 50px;
+  }
 
-#footer #p2 {
-  margin-top: 10px;
-  font-size: 12px;
-  text-align: center;
-}
+  .testLogin {
+    float: right;
+  }
+
+  .testRegister {
+    float: right; 
+  }
+
+  #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+  }
+
+  #footer #p1 {
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  #footer #p2 {
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+  }
+
 </style>

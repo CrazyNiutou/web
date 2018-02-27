@@ -53,15 +53,6 @@
         </div>
       </div>
     </el-col>
-    <el-col :span="6">
-      <div class="grid-content bg-purple">
-        <div id="test111">
-          <span v-bind:title="message">
-            鼠标悬停几秒钟查看此处动态绑定的提示信息！
-          </span>
-        </div>
-      </div>
-    </el-col>
   </el-row>
 </div>
 </template>
