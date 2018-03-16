@@ -32,6 +32,9 @@ namespace NT.Web
             services.AddOptions();
             services.Configure<ConfigOptions>(Configuration.GetSection("ConfigOptions"));
             services.AddMvc();
+            //添加跨域组件
+            services.AddCors(options => options.AddPolicy("CorsTest", p => p.WithOrigins("http://localhost:5000")));
+
             //添加授权
             services.AddAuthentication(options =>
             {
@@ -45,8 +48,7 @@ namespace NT.Web
                  //options.LogoutPath = new PathString("/Account/index");
              });
 
-            #region 自定义注入
-
+            #region 自定义注入 
             services.AddScoped<MySqlOperator>();
             services.AddDbStoreHolder();
             services.AddScoped<IAccount, Account>();
@@ -72,6 +74,8 @@ namespace NT.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            app.UseCors("CorsTest");
+
             //调用身份验证中间件
             app.UseAuthentication();
             app.UseStaticFiles();

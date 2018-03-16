@@ -29,7 +29,6 @@
               <router-link to="/content/bbb">登录</router-link>
             </el-menu-item>
           </div>
-
         </el-menu>
       </el-header>
       <el-main>
@@ -53,65 +52,63 @@
 </template>
 
 <script>
-  export default {
-    name: "App",
-    data() {
-      return {
-        activeIndex: "1"
-      };
-    }
-  };
+export default {
+  name: "App",
+  data() {
+    return {
+      activeIndex: "1"
+    };
+  }
+};
 
-  import "element-ui/lib/theme-chalk/index.css";
-
+import "element-ui/lib/theme-chalk/index.css";
 </script>
 
 <style>
-  #app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-  }
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-  ul {
-    list-style: none;
-  }
+ul {
+  list-style: none;
+}
 
-  .logo {
-    float: left;
-    padding-left: 10px;
-    padding-right: 50px;
-  }
+.logo {
+  float: left;
+  padding-left: 10px;
+  padding-right: 50px;
+}
 
-  .testLogin {
-    float: right;
-  }
+.testLogin {
+  float: right;
+}
 
-  .testRegister {
-    float: right; 
-  }
+.testRegister {
+  float: right;
+}
 
-  #footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    background-color: #f5f5f5;
-  }
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
 
-  #footer #p1 {
-    margin-top: 10px;
-    font-size: 12px;
-    text-align: center;
-  }
+#footer #p1 {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+}
 
-  #footer #p2 {
-    margin-top: 10px;
-    font-size: 12px;
-    text-align: center;
-  }
-
+#footer #p2 {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+}
 </style>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using NT.Models;
@@ -8,17 +9,20 @@ using System.Diagnostics;
 
 namespace NT.Web.Controllers
 {
+    [Route("api/[controller]")]
     public class HomeController : Controller
     {
         private MySqlOperator m_MySqlOperator;
+
         public HomeController(IServiceProvider provider)
         {
             m_MySqlOperator = provider.GetService<MySqlOperator>();
         }
 
         [Authorize]
+        [EnableCors("CorsTest")]
         public IActionResult Index()
-        { 
+        {
             return View();
         }
 

@@ -1,6 +1,7 @@
 <template> 
 <div id="test"> 
   <ul>
+     <el-button type="primary" @click="testClick"></el-button>
     <!-- <li  v-for="(item,index) in items" :key="index"> -->
       {{items}}
     <!-- </li> -->
@@ -8,21 +9,26 @@
 </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   name: "ContentArticles",
   data() {
     return {
-      items: []
+      items: ""
     };
   },
-  watch:{
-    items:function(){
-      this.getMsg()
-    }
-  },
-  methods:{
-    getMsg:function(){
-      this.axios.get()
+  methods: {
+    testClick(evt) {
+      let _self = this;
+      axios
+        .get("http://localhost:55636/api/values")
+        .then(function(response) {
+          console.log(response);
+          _self.items = response.data;
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     }
   }
 };

@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NT.Common", "NT.Common\NT.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NT.ICommon", "NT.ICommon\NT.ICommon.csproj", "{9F032532-86A6-4E22-A3A1-AFADACC5ED3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NT.WEBAPI", "NT.WEBAPI\NT.WEBAPI.csproj", "{CA526429-46B8-475A-B898-F33C1CA16A23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{9F032532-86A6-4E22-A3A1-AFADACC5ED3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F032532-86A6-4E22-A3A1-AFADACC5ED3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F032532-86A6-4E22-A3A1-AFADACC5ED3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA526429-46B8-475A-B898-F33C1CA16A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA526429-46B8-475A-B898-F33C1CA16A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA526429-46B8-475A-B898-F33C1CA16A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA526429-46B8-475A-B898-F33C1CA16A23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
