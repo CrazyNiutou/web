@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace NT.WEBAPI.Controllers
 {
@@ -12,10 +13,13 @@ namespace NT.WEBAPI.Controllers
     {
         // GET api/values
         [HttpGet]
-        [EnableCors("CorsCore")]
-        public async Task<IEnumerable<string>> Get()
+        [EnableCors("CorsCore")]//定义跨域
+        public async Task<JsonResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            var test = new List<string>();
+            test.AddRange(new string[] { "value1", "value2", "value3", "value4" });
+            var result = JsonConvert.SerializeObject(test);
+            return new JsonResult(result);
         }
 
         // GET api/values/5

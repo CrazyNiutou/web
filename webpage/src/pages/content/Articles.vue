@@ -1,10 +1,9 @@
 <template> 
 <div id="test"> 
   <ul>
-     <el-button type="primary" @click="testClick"></el-button>
-    <!-- <li  v-for="(item,index) in items" :key="index"> -->
-      {{items}}
-    <!-- </li> -->
+    <li v-for="item in items" :key="item.id">
+      {{item}} 
+    </li> 
   </ul>
 </div>
 </template>
@@ -16,6 +15,9 @@ export default {
     return {
       items: ""
     };
+  },
+  created(){
+    this.testClick();
   },
   methods: {
     testClick(evt) {
@@ -32,19 +34,4 @@ export default {
     }
   }
 };
-
-// el: "#test",
-// data: {
-// return  items: []
-// },
-// methods() {
-//   Vue.axios
-//     .get(
-//       "https://free-api.heweather.com/s6/weather/now?location=CN101010100&key=227e8c46911e473ea5b00590643b1299"
-//     )
-//     .then(response => {
-//       // this.items= response.data.results
-//       console.log(response);
-//     });
-// }
 </script>
