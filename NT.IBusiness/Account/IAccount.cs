@@ -8,6 +8,6 @@ namespace NT.IBusiness
 {
     public interface IAccount
     {
-        Task<List<UserInfoSerialize>> GetUsersInfo(string userName, string pwd);
+        Task<UsersDbEntity> GetUsersInfo(string userName, string pwd);
     }
 }

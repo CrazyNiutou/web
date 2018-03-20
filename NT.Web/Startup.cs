@@ -51,8 +51,7 @@ namespace NT.Web
             #region 自定义注入 
             services.AddScoped<MySqlOperator>();
             services.AddDbStoreHolder();
-            services.AddScoped<IAccount, Account>();
-            services.AddScoped<OutputParam>();
+            services.AddScoped<IAccount, Account>(); 
             #endregion
 
         }

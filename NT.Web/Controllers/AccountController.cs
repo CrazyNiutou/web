@@ -32,35 +32,9 @@ namespace NT.Web.Controllers
         }
 
         [Route("account/login")]
-        public async Task<JsonResult> Login(string userName, string pwd, string returnUrl = null)
+        public Task<JsonResult> Login(string userName, string pwd, string returnUrl = null)
         {
-            var outParam = ProviderCase.GetService<OutputParam>();
-            var json = string.Empty;
-            try
-            {
-                var business = ProviderCase.GetService<IAccount>();
-                var list = await business.GetUsersInfo(userName, pwd);
-                var userInfo = list.FirstOrDefault();
-                var claimIdentity = new ClaimsIdentity("Cookie");
-                claimIdentity.AddClaim(new Claim(ClaimTypes.NameIdentifier, userInfo.UserID));
-                claimIdentity.AddClaim(new Claim(ClaimTypes.Name, userInfo.UserName));
-                claimIdentity.AddClaim(new Claim(ClaimTypes.NameIdentifier, userInfo.UserID));
-                claimIdentity.AddClaim(new Claim(ClaimTypes.Name, userInfo.UserName));
-
-                var claimPrincipal = new ClaimsPrincipal(claimIdentity);
-                await HttpContext.SignInAsync("MyCookieMiddleware", claimPrincipal, new AuthenticationProperties() { ExpiresUtc = DateTime.UtcNow.AddMinutes(60) });
-
-                outParam.ReturlUrl = string.IsNullOrWhiteSpace(returnUrl) ? "/home/index" : returnUrl;
-                json = JsonConvert.SerializeObject(outParam);
-
-            }
-            catch (Exception ex)
-            {
-                outParam.StatusCode = 999;
-                outParam.ErrMsg = "调用登录接口失败";
-            }
-            await Task.Delay(0);
-            return new JsonResult(json);
+            return null;
         }
 
     }

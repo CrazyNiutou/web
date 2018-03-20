@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using NT.ModelExtensions;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,15 +14,17 @@ namespace NT.WEBAPI.Controllers
     {
         // GET: api/<controller>
         [HttpGet]
-        public async IEnumerable<OutParam> Get()
+        [EnableCors("CorsCore")]//定义跨域
+        public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return null;//new string[] { "value1", "value2" };
         }
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public string Get(string userName, string pwd)
         {
+
             return "value";
         }
 
