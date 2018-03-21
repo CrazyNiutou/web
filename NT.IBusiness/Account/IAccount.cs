@@ -8,6 +8,6 @@ namespace NT.IBusiness
 {
     public interface IAccount
     {
-        Task<UsersDbEntity> GetUsersInfoAsync(string userName, string pwd);
+        Task<List<UsersDbEntity>> GetUsersInfoAsync(string userName, string pwd);
     }
 }

@@ -28,7 +28,7 @@ namespace NT.Business
             List<UsersDbEntity> returnEntity = null;
             using (var conn = Operator.GetMySqlDbConnection())
             {
-                returnEntity = conn.Query<List<UsersDbEntity>>(sql).AsList();
+                returnEntity = conn.Query<UsersDbEntity>(sql).AsList();
             }
             await Task.Delay(0);
             return returnEntity;
