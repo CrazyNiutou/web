@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using NT.IBusiness;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -36,16 +38,18 @@ namespace NT.WEBAPI.Controllers
             return null;
         }
 
+
         // POST api/<controller>
         [HttpPost]
-        public ObjectResult Post(dynamic obj)
+        public async Task<ObjectResult> Post([FromBody]dynamic obj)
         {
+            //var ss = Convert.ToString(obj.username);
+
             try
             {
-                var test = obj.ToString();
                 var userName = Convert.ToString(obj.userName);
                 var pwd = Convert.ToString(obj.pwd);
-                var result = _account.GetUsersInfo(userName, pwd);
+                var result = await _account.GetUsersInfoAsync(userName, pwd);
                 if (result == null || result.Result == null)
                 {
                     return BadRequest("帐号或密码错误");

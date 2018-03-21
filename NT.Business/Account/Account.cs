@@ -16,7 +16,7 @@ namespace NT.Business
             this.Operator = provider.GetService<MySqlOperator>();
         }
 
-        public async Task<UsersDbEntity> GetUsersInfo(string userName, string pwd)
+        public async Task<List<UsersDbEntity>> GetUsersInfoAsync(string userName, string pwd)
         {
             var sql = $@"SELECT
 	                            *
@@ -25,10 +25,10 @@ namespace NT.Business
                             WHERE
 	                            A.UserName = '{userName}'
                             AND A.`PassWord` = '{pwd}' ";
-            UsersDbEntity returnEntity = null;
+            List<UsersDbEntity> returnEntity = null;
             using (var conn = Operator.GetMySqlDbConnection())
             {
-                returnEntity = conn.QueryFirst<UsersDbEntity>(sql);
+                returnEntity = conn.Query<List<UsersDbEntity>>(sql).AsList();
             }
             await Task.Delay(0);
             return returnEntity;
