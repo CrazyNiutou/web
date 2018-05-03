@@ -37,12 +37,13 @@ namespace NT.WEBAPI
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("dd%88*377f6d&f£$$£$FdddFF33fssDG^!3"))
             });
             services.AddMvc();
-            services.AddCors(options => options.AddPolicy("CorsCore", x => x.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:8080")));
+            services.AddCors(options => options.AddPolicy("CorsCore", x => x.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://127.0.0.1:8020")));
             //自定义注入
             services.Configure<ConfigOptions>(Configuration.GetSection("ConfigOptions"));
             services.AddScoped<MySqlOperator>();
             services.AddSingleton<IDbStoreHolder, DbStoreHolder>();
             services.AddScoped<IAccount, Account>();
+            services.AddScoped<IContent, Content>();
             services.AddLogging();
         }
 

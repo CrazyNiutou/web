@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
@@ -19,9 +20,10 @@ namespace NT.WEBAPI.Controllers
     {
         private IAccount _account;
         private ILogger _logger;
-        public LoginController(IAccount account)
+        public LoginController(IAccount account, ILogger<LoginController> logger)
         {
             _account = account;
+            _logger = logger;
         }
 
         // GET: api/<controller>
@@ -42,9 +44,7 @@ namespace NT.WEBAPI.Controllers
         // POST api/<controller>
         [HttpPost]
         public async Task<ObjectResult> Post([FromBody]dynamic obj)
-        {
-            //var ss = Convert.ToString(obj.username);
-
+        { 
             try
             {
                 var userName = Convert.ToString(obj.userName);

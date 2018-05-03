@@ -1,18 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
+using NT.Common;
+using NT.IBusiness;
+using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace NT.WEBAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     public class ContentController : Controller
     {
+        private IContent _content;
+
+        public ContentController(IContent content)
+        {
+            _content = content;
+        }
+
         // GET: api/<controller>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -21,12 +27,30 @@ namespace NT.WEBAPI.Controllers
         }
 
         // GET api/<controller>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{articleType}")]
+        [EnableCors("CorsCore")]//定义跨域
+        public string GetArticleList(int articleType)
         {
-            return "value";
+            var result = _content.GetArticleList(articleType);
+            if (result == null && result.Count <= 0)
+            {
+                return null;
+            }
+            var json = result.JsonSerializeObjectShortDate();
+            return json;
         }
-
+        [HttpGet("{articleId}")]
+        [EnableCors("CorsCore")]//定义跨域
+        public string GetArticleDtl(string articleId)
+        {
+            var result = _content.GetArticleDetail(articleId);
+            if (result == null || result.Count <= 0)
+            {
+                return null;
+            }
+            var json = result.JsonSerializeObjectShortDate();
+            return json;
+        }
         // POST api/<controller>
         [HttpPost]
         public void Post([FromBody]string value)

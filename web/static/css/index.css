@@ -1,0 +1,21 @@
+body li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none
+}
+.navbar-default.navbar-nav li a{
+	color: red!important;
+}
+.navbar-default li  a:hover{
+	background: #F3F3F3!important;
+}
+.content {}
+
+.content .wrap {
+	display: flex;
+	justify-content: flex-start;
+}
+
+ 

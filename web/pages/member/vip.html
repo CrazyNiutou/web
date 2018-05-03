@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>首页</title>
+		<link rel="stylesheet" href="../../assats/layui-src/dist/css/layui.css">
+		<style type="text/css">
+			.header {
+				height: 60px;
+				border-bottom: none;
+			}
+			
+			.logo {
+				left: 40px;
+				position: absolute;
+				top: 16px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="layui-container">
+			<div class="container layui-header ">
+				<div class="layui-main">
+					<ul class="layui-nav layui-bg-cyan" lay-filter="">
+						<li class="layui-nav-item">
+							<a href="javascript:(0)"><img class="layout-nav-img" src="../../static/img/lg.png" /> </a>
+						</li>
+						<li class="layui-nav-item ">
+							<a href="../../pages/index.html">首页</a>
+						</li>
+						<li class="layui-nav-item ">
+							<a href=" ../../pages/content/note.html">社区</a>
+						</li>
+						<li class="layui-nav-item layui-this">
+							<a href="../../pages/member/vip.html">会员</a>
+						</li>
+						<li class="layui-nav-item" style="float: right; ">
+							<a href="..">登录</a>
+						</li>
+						<li class="layui-nav-item" style="float: right;">
+							<a href="..">注册</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="layui-main">
+				<div class="content modal-body">
+					<br />
+					<p class="title"> 会员充值 </p>
+					<div class="content">
+						<p>
+							目前本网内容只对会员开放。
+							<br/> 1、
+							<span style="color:red">青铜</span>
+							<br/> 期限：半年
+							<br/> 权限：期限内全站所有版块无限下载、免回复、免广告
+							<br/> 价格：115元
+							<br/> 2、
+							<span style="color:red">白银</span>
+							<br/> 期限：一年
+							<br/> 权限：期限内全站所有版块无限下载、免回复、免广告
+							<br/> 价格：215元
+							<br/> 3、
+							<span style="color:red">黄金</span>
+							<br/> 期限：永久
+							<br/> 权限：永久全站所有版块无限下载、免回复、免广告
+							<br/> 价格：415元
+							<br/>
+							<br/>
+							<h4 style="color: green;font-weight: bold">会员充值方式步骤如下：</h4>
+							<br />
+							<p style="color: green;font-weight: bold">1.扫描下方的二维码：</p>
+							<br/>
+							<img name="pic" src="../../static/img/zhifu.jpg" width="200px" height="200px" />
+							<br/>
+							<p style="color: green;font-weight: bold"> 2.输入金额，在备注中输入注册的用户名（如果有其他的要求，请在备注中填写）</p>
+							<br/>
+							<p style="color: green;font-weight: bold"> 3.确认后，等待5-15分钟，重新进入网站，即可浏览内容</p>
+						</p>
+					</div>
+				</div>
+				<div class="layui-footer" style="position: fixed;bottom: 0;">
+					<footer class="footer layui-footer">
+						<p> 本网站版权归站长所有。 </p>
+						<br />
+						<p> 当使用本站时，代表您已接受了本站的使用条款和隐私条款。版权所有，保留一切权利。 </p>
+					</footer>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../assats/layui-src/build/layui.js"></script>
+		<script>
+			//一般直接写在一个js文件中
+
+			layui.use(['element'], function() {
+				var element = layui.element
+			})
+		</script>
+	</body>
+
+</html>

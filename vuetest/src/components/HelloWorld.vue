@@ -1,88 +1,74 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h1>{{ test }}</h1>
-    <p>rawHtml: {{ rawHtml }}</p>
-    <p>rawHtml:
-      <span v-html="rawHtml"></span>
+  <div id="watch-example">
+    <p>
+      Ask a yes/no question:
+      <input v-model="question">
     </p>
-    <div v-bind:id="dynamicId"></div>
-    <p v-if="seen">现在你看到我了</p>
+    <p>{{ answer }}</p>
 
-    <div id="example">
-      <p>Original message: "{{ message }}"</p>
-      <p>Computed reversed message: "{{ reversedMessage }}"</p>
-    </div>
-    <input v-model="question">
+  <div class="block">
+    <span class="demonstration">显示总数</span>
+    <el-pagination
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+      :current-page.sync="currentPage1"
+      :page-size="100"
+      layout="total, prev, pager, next"
+      :total="1000">
+    </el-pagination>
   </div>
+
+  </div>  
 </template>
 
-<script> 
-
-  var data = {
-    msg: '111'
-  }
-  export default {
-    name: 'HelloWorld',
-    data() {
-      return {
-        ...data,
-        test: 'v-once',
-        rawHtml: '<span style="color:red">rawHtml</span>',
-        dynamicId: 'test',
-        seen: true,
-        message: 'Hello',
-        question:''
-      }
-    },
-    computed: {
-      reversedMessage: function () {
-        return this.message.split('').reverse().join('')
-      }
-    },
-    watch: { 
-      question: function (newQuestion, oldQuestion) {
-        this.getMsg()
-      }
-    },
-    methods: {
-      getMsg: function () {
-        var vm=this 
-        this.Axios. get('https://yesno.wtf/api')
-          .then(function (response) {
-            vm.answer = _.capitalize(response.data.answer)
-          })
-          .catch(function (error) {
-            vm.answer = 'Error! Could not reach the API. ' + error
-          })
-      }
-    },
-    created: function () {
-      console.log(data.msg + this.msg)
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+<script>
+import axios from "axios";
+export default {
+  name: "HelloWorld",
+  data() {
+    return {
+      question: "",
+      answer: "11111111111!",
+      currentPage1: 1
+    };
+  },
+  watch: {
+    question: function(newQuestion, oldQuestion) {
+      this.answer = "22222222222";
+      this.getAnswer();
     }
-  }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-
+  },
+  methods: {
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`);
+    }
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  h1,
-  h2 {
-    font-weight: normal;
-  }
+h1,
+h2 {
+  font-weight: normal;
+}
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
 
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
 
-  a {
-    color: #42b983;
-  }
-
+a {
+  color: #42b983;
+}
 </style>
