@@ -27,8 +27,8 @@ namespace NT.WEBAPI.Controllers
         }
 
         // GET api/<controller>/5
-        [HttpGet("{articleType}")]
         [EnableCors("CorsCore")]//定义跨域
+        [HttpGet("{articleType}")]
         public string GetArticleList(int articleType)
         {
             var result = _content.GetArticleList(articleType);

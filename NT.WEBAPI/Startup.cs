@@ -5,9 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using NT.Business;
-using NT.Common;
-using NT.IBusiness;
-using NT.ICommon;
+using NT.Common; 
 using NT.Models;
 using System.Text;
 
@@ -41,9 +39,7 @@ namespace NT.WEBAPI
             //自定义注入
             services.Configure<ConfigOptions>(Configuration.GetSection("ConfigOptions"));
             services.AddScoped<MySqlOperator>();
-            services.AddSingleton<IDbStoreHolder, DbStoreHolder>();
-            services.AddScoped<IAccount, Account>();
-            services.AddScoped<IContent, Content>();
+         
             services.AddLogging();
         }
 

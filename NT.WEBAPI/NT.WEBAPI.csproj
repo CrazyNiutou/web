@@ -21,8 +21,6 @@
   <ItemGroup>
     <ProjectReference Include="..\NT.Business\NT.Business.csproj" />
     <ProjectReference Include="..\NT.Common\NT.Common.csproj" />
-    <ProjectReference Include="..\NT.IBusiness\NT.IBusiness.csproj" />
-    <ProjectReference Include="..\NT.ICommon\NT.ICommon.csproj" />
     <ProjectReference Include="..\NT.Models\NT.Models.csproj" />
   </ItemGroup>
 
